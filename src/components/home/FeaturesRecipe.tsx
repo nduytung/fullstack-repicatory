@@ -1,10 +1,13 @@
 import React from "react";
 import PrimaryButton from "../elements/PrimaryButton";
+import SectionBandage from "../elements/SectionBandage";
 
 const FeaturesRecipe = () => {
   return (
     <div className="bg-white">
-      <div className="w-full bg-gray-300 h-72"></div>
+      <div className="w-full bg-gray-300 h-72 p-5">
+        <SectionBandage> featured recipe</SectionBandage>
+      </div>
       <article className="p-6">
         <h3 className="text-rose-400 font-semibold text-lg">
           Spaghetti carbonara with rustic bread

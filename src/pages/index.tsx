@@ -18,6 +18,8 @@ import TitleBandage from "../components/elements/TitleBandage";
 import StatisCard from "../components/home/StatisCard";
 import FeaturesRecipe from "../components/home/FeaturesRecipe";
 import FeaturedMember from "../components/home/FeaturedMember";
+import SectionBandage from "../components/elements/SectionBandage";
+import Recipe from "../components/home/Recipe";
 
 const Home = () => {
   //section 1
@@ -122,14 +124,29 @@ const Home = () => {
       <section className="bg-gray-100 ">
         <div className="container mx-auto grid grid-cols-12 gap-5">
           <article className="col-span-9">
-            <div className="grid grid-cols-3 gap-8">
-              <div className="col-span-2">
-                <FeaturesRecipe />
+            <section>
+              <div className="grid grid-cols-3 gap-8">
+                <div className="col-span-2">
+                  <FeaturesRecipe />
+                </div>
+                <div className="col-span-1">
+                  <FeaturedMember />
+                </div>
               </div>
-              <div className="col-span-1">
-                <FeaturedMember />
+            </section>
+            <hr className="my-8" />
+            <section>
+              <SectionBandage> latest recipe</SectionBandage>
+              <div className="grid grid-cols-3 gap-6">
+                <Recipe />
+                <Recipe />
+                <Recipe />
+                <Recipe />
+                <Recipe />
+                <Recipe />
+                <Recipe />
               </div>
-            </div>
+            </section>
           </article>
           <aside className="col-span-3"></aside>
         </div>

@@ -1,10 +1,13 @@
 import React from "react";
 import PrimaryButton from "../elements/PrimaryButton";
+import SectionBandage from "../elements/SectionBandage";
 
 const FeaturedMember = () => {
   return (
     <div className="bg-white">
-      <div className="bg-gray-300 h-48"></div>
+      <div className="bg-gray-300 h-48 p-5">
+        <SectionBandage>Feature member</SectionBandage>
+      </div>
       <div className="px-5">
         <p className="my-4">admin</p>
         <hr />
