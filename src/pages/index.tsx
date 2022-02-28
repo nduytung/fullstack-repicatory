@@ -6,9 +6,18 @@ import PrimaryButton from "../components/elements/PrimaryButton";
 import WhiteButton from "../components/elements/WhiteButton";
 import Input from "../components/home/Input";
 import SelectInput from "../components/home/SelectInput";
-import { RightOutlined, CommentOutlined } from "@ant-design/icons";
+import {
+  RightOutlined,
+  CommentOutlined,
+  BgColorsOutlined,
+  CameraOutlined,
+  BookOutlined,
+  FileDoneOutlined,
+} from "@ant-design/icons";
 import TitleBandage from "../components/elements/TitleBandage";
 import StatisCard from "../components/home/StatisCard";
+import FeaturesRecipe from "../components/home/FeaturesRecipe";
+import FeaturedMember from "../components/home/FeaturedMember";
 
 const Home = () => {
   //section 1
@@ -86,25 +95,43 @@ const Home = () => {
             <StatisCard name="members" number={33}>
               <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
             </StatisCard>
-            <StatisCard name="members" number={33}>
+            <StatisCard name="recipes" number={33}>
+              <BgColorsOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+            </StatisCard>
+            <StatisCard name="photos" number={33}>
+              <CameraOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+            </StatisCard>
+            <StatisCard name="posts" number={33}>
+              <BookOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+            </StatisCard>
+            <StatisCard name="comments" number={33}>
               <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
             </StatisCard>
-            <StatisCard name="members" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="members" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="members" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="members" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+            <StatisCard name="articles" number={33}>
+              <FileDoneOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
             </StatisCard>
           </div>
           <PrimaryButton callback={handleJoinUs} classname="px-8 mx-auto">
             join us!
           </PrimaryButton>
+        </div>
+      </section>
+
+      <hr className="my-10" />
+      {/* section 3 */}
+      <section className="bg-gray-100 ">
+        <div className="container mx-auto grid grid-cols-12 gap-5">
+          <article className="col-span-9">
+            <div className="grid grid-cols-3 gap-8">
+              <div className="col-span-2">
+                <FeaturesRecipe />
+              </div>
+              <div className="col-span-1">
+                <FeaturedMember />
+              </div>
+            </div>
+          </article>
+          <aside className="col-span-3"></aside>
         </div>
       </section>
     </div>
