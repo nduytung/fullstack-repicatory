@@ -16,7 +16,7 @@ const PrimaryButton = ({
   return (
     <button
       onClick={() => callback()}
-      className={`${classname} bg-rose-400 px-8 hover:bg-white hover:text-rose-400 border border-rose-400 text-white py-2 uppercase font-semibold text-sm`}
+      className={`${classname} bg-rose-400 hover:bg-white hover:text-rose-400 border border-rose-400 text-white py-2 uppercase font-semibold text-sm mx-auto block`}
     >
       {children}
     </button>

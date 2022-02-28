@@ -102,7 +102,9 @@ const Home = () => {
               <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
             </StatisCard>
           </div>
-          <PrimaryButton callback={handleJoinUs}> join us!</PrimaryButton>
+          <PrimaryButton callback={handleJoinUs} classname="px-8 mx-auto">
+            join us!
+          </PrimaryButton>
         </div>
       </section>
     </div>
