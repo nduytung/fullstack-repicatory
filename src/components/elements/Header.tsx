@@ -43,9 +43,9 @@ const Header = () => {
         })}
       </ul>
       <div className="flex col-span-3 h-full p-0">
-        <div className="flex-1 bg-gray-100">hello</div>
-        <div className="flex-1 bg-gray-200">muda</div>
-        <div className="flex-1 bg-gray-300">fuka</div>
+        <div className="flex-1 bg-rose-300">hello</div>
+        <div className="flex-1 bg-rose-400">muda</div>
+        <div className="flex-1 bg-rose-500">fuka</div>
       </div>
     </header>
   );
