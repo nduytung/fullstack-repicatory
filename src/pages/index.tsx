@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/elements/Header";
 import Input from "../components/home/Input";
+import SelectInput from "../components/home/SelectInput";
 
 const Home = () => {
   return (
@@ -24,6 +25,16 @@ const Home = () => {
           </p>
           <form>
             <Input name="term" placeholder="Enter your search term" />
+            <SelectInput
+              name="term"
+              placeholder="Enter your search term"
+              inputList={[
+                {
+                  name: "testing 01",
+                  value: "ajasasasd",
+                },
+              ]}
+            />
           </form>
         </div>
       </div>
