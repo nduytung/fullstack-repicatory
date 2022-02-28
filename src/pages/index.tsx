@@ -13,6 +13,7 @@ import {
   CameraOutlined,
   BookOutlined,
   FileDoneOutlined,
+  CopyOutlined,
 } from "@ant-design/icons";
 import TitleBandage from "../components/elements/TitleBandage";
 import StatisCard from "../components/home/StatisCard";
@@ -20,6 +21,8 @@ import FeaturesRecipe from "../components/home/FeaturesRecipe";
 import FeaturedMember from "../components/home/FeaturedMember";
 import SectionBandage from "../components/elements/SectionBandage";
 import Recipe from "../components/home/Recipe";
+import Footer from "../components/elements/Footer";
+import IconRecipe from "../components/home/IconRecipe";
 
 const Home = () => {
   //section 1
@@ -122,7 +125,7 @@ const Home = () => {
       <hr className="my-10" />
       {/* section 3 */}
       <section className="bg-gray-100 ">
-        <div className="container mx-auto grid grid-cols-12 gap-5">
+        <div className="container mx-auto grid grid-cols-12 gap-10">
           <article className="col-span-9">
             <section>
               <div className="grid grid-cols-3 gap-8">
@@ -136,8 +139,8 @@ const Home = () => {
             </section>
             <hr className="my-8" />
             <section>
-              <SectionBandage> latest recipe</SectionBandage>
-              <div className="grid grid-cols-3 gap-6">
+              <SectionBandage classname="mb-8"> latest recipe</SectionBandage>
+              <div className="grid grid-cols-3 gap-6 mb-10">
                 <Recipe />
                 <Recipe />
                 <Recipe />
@@ -148,9 +151,45 @@ const Home = () => {
               </div>
             </section>
           </article>
-          <aside className="col-span-3"></aside>
+          <aside className="col-span-3">
+            <div>
+              <article className="bg-white py-3">
+                Recipe category with icons
+              </article>
+              <div className="grid grid-cols-3">
+                <IconRecipe title="appetizer" color="bg-rose-300">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-400">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-500">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-400">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-500">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-300">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-500">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-300">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+                <IconRecipe title="appetizer" color="bg-rose-400">
+                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                </IconRecipe>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
