@@ -23,6 +23,7 @@ import SectionBandage from "../components/elements/SectionBandage";
 import Recipe from "../components/home/Recipe";
 import Footer from "../components/elements/Footer";
 import IconRecipe from "../components/home/IconRecipe";
+import MainLayout from "../layout/MainLayout/MainLayout";
 
 const Home = () => {
   //section 1
@@ -39,57 +40,58 @@ const Home = () => {
     return;
   };
   return (
-    <div className="bg-rose-300">
-      <Header />
+    <div>
       {/* section 1 */}
-      <section className="bg-rose-300 container grid grid-cols-12 mx-auto py-20">
-        <div className="col-span-8 flex flex-col text-white items-start justify-between">
-          <h1 className="font-light text-4xl">Welcome to social chef!</h1>
-          <p className="font-light text-md text-justify">
-            SocialChef is the ultimate cooking social community, where recipes
-            come to life. By joining us you will join a robust foodie community
-            and where you will get to share your recipes and food ideas with
-            hundreds of other like-minded members.{"\n"}
-            You will also get a chance to win awesome prizes, make new friends
-            and share delicious recipes.
-          </p>
-          <WhiteButton callback={handleExplore} classname="mr-5 align-top">
-            <div className="flex items-center px-5 justify-between">
-              <p className="mr-8">Explore our community</p>
-              <RightOutlined />
-            </div>
-          </WhiteButton>
-          <p>
-            Already a member? Click <a href="#"> here</a> to login.
-          </p>
-        </div>
-        <div className="col-span-1"></div>
-        <div className="col-span-3 bg-white p-4">
-          <h4 className="font-semibold text-md text-gray-700">
-            Refine search result
-          </h4>
-          <p className="font-light text-justify text-gray-500">
-            All you need to do is enter an ingredient, a dish or a keyword.You
-            can also select a specific tag from the dropdown. There’s sure to be
-            something tempting for you to try.{"\n"}
-            Enjoy!
-          </p>
-          <form>
-            <Input name="term" placeholder="Enter your search term" />
-            <SelectInput
-              name="term"
-              placeholder="Enter your search term"
-              inputList={[
-                {
-                  name: "testing 01",
-                  value: "ajasasasd",
-                },
-              ]}
-            />
-            <PrimaryButton callback={handleCooking} classname="w-full">
-              start cooking!
-            </PrimaryButton>
-          </form>
+      <section className="bg-rose-300 py-20">
+        <div className="container grid grid-cols-12 mx-auto">
+          <div className="col-span-8 flex flex-col text-white items-start justify-between">
+            <h1 className="font-light text-4xl">Welcome to social chef!</h1>
+            <p className="font-light text-md text-justify">
+              SocialChef is the ultimate cooking social community, where recipes
+              come to life. By joining us you will join a robust foodie
+              community and where you will get to share your recipes and food
+              ideas with hundreds of other like-minded members.{"\n"}
+              You will also get a chance to win awesome prizes, make new friends
+              and share delicious recipes.
+            </p>
+            <WhiteButton callback={handleExplore} classname="mr-5 align-top">
+              <div className="flex items-center px-5 justify-between">
+                <p className="mr-8">Explore our community</p>
+                <RightOutlined />
+              </div>
+            </WhiteButton>
+            <p>
+              Already a member? Click <a href="#"> here</a> to login.
+            </p>
+          </div>
+          <div className="col-span-1"></div>
+          <div className="col-span-3 bg-white p-4">
+            <h4 className="font-semibold text-md text-gray-700">
+              Refine search result
+            </h4>
+            <p className="font-light text-justify text-gray-500">
+              All you need to do is enter an ingredient, a dish or a keyword.You
+              can also select a specific tag from the dropdown. There’s sure to
+              be something tempting for you to try.{"\n"}
+              Enjoy!
+            </p>
+            <form>
+              <Input name="term" placeholder="Enter your search term" />
+              <SelectInput
+                name="term"
+                placeholder="Enter your search term"
+                inputList={[
+                  {
+                    name: "testing 01",
+                    value: "ajasasasd",
+                  },
+                ]}
+              />
+              <PrimaryButton callback={handleCooking} classname="w-full">
+                start cooking!
+              </PrimaryButton>
+            </form>
+          </div>
         </div>
       </section>
       {/* section 2 */}
@@ -122,9 +124,9 @@ const Home = () => {
         </div>
       </section>
 
-      <hr className="my-10" />
+      <hr />
       {/* section 3 */}
-      <section className="bg-gray-100 ">
+      <section className="bg-gray-100 py-10">
         <div className="container mx-auto grid grid-cols-12 gap-10">
           <article className="col-span-9">
             <section>
@@ -189,7 +191,6 @@ const Home = () => {
           </aside>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };
