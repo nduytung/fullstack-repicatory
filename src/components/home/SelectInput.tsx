@@ -15,7 +15,7 @@ const SelectInput = ({ name, placeholder, inputList }: SelectInputType) => {
   return (
     <select
       name={name}
-      className="border bg-white w-full my-2 text-gray-400 text-sm border-gray-200 font-light p-2 focus:border-gray-400 focus:outline-none"
+      className="border bg-white w-full my-2 text-gray-400 text-sm border-gray-300 font-light p-2 focus:border-gray-400 focus:outline-none"
       placeholder={placeholder}
     >
       {inputList.map((item) => {

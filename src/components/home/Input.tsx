@@ -10,7 +10,7 @@ const Input = ({ name, placeholder }: InputType) => {
     <input
       type="text"
       name={name}
-      className="border border-gray-200 font-light text-sm w-full p-2 focus:border-gray-400 focus:outline-none"
+      className="border my-2 border-gray-300 font-thin text-black text-sm w-full p-2 focus:border-gray-400 focus:outline-none"
       placeholder={placeholder}
     />
   );
