@@ -42,8 +42,8 @@ const Home = () => {
   return (
     <div>
       {/* section 1 */}
-      <section className="bg-rose-300 py-20">
-        <div className="container grid grid-cols-12 mx-auto">
+      <section className="py-32 main-banner">
+        <div className="container grid grid-cols-12 mx-auto max-w-screen-xl">
           <div className="col-span-8 flex flex-col text-white items-start justify-between">
             <h1 className="font-light text-4xl">Welcome to social chef!</h1>
             <p className="font-light text-md text-justify">
@@ -94,103 +94,106 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* section 2 */}
-      <section className="bg-gray-100 py-8">
-        <div className="container mx-auto">
-          <TitleBandage>socialchefs in number</TitleBandage>
-          <div className="grid grid-cols-6 my-8 gap-6">
-            <StatisCard name="members" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="recipes" number={33}>
-              <BgColorsOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="photos" number={33}>
-              <CameraOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="posts" number={33}>
-              <BookOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="comments" number={33}>
-              <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-            <StatisCard name="articles" number={33}>
-              <FileDoneOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
-            </StatisCard>
-          </div>
-          <PrimaryButton callback={handleJoinUs} classname="px-8 mx-auto">
-            join us!
-          </PrimaryButton>
-        </div>
-      </section>
+      <main className="container mx-auto max-w-screen-xl">
+        {/* section 2 */}
 
-      <hr />
-      {/* section 3 */}
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto grid grid-cols-12 gap-10">
-          <article className="col-span-9">
-            <section>
-              <div className="grid grid-cols-3 gap-8">
-                <div className="col-span-2">
-                  <FeaturesRecipe />
-                </div>
-                <div className="col-span-1">
-                  <FeaturedMember />
-                </div>
-              </div>
-            </section>
-            <hr className="my-8" />
-            <section>
-              <SectionBandage classname="mb-8"> latest recipe</SectionBandage>
-              <div className="grid grid-cols-3 gap-6 mb-10">
-                <Recipe />
-                <Recipe />
-                <Recipe />
-                <Recipe />
-                <Recipe />
-                <Recipe />
-                <Recipe />
-              </div>
-            </section>
-          </article>
-          <aside className="col-span-3">
-            <div>
-              <article className="bg-white py-3">
-                Recipe category with icons
-              </article>
-              <div className="grid grid-cols-3">
-                <IconRecipe title="appetizer" color="bg-rose-300">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-400">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-500">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-400">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-500">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-300">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-500">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-300">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-                <IconRecipe title="appetizer" color="bg-rose-400">
-                  <CopyOutlined style={{ fontSize: 30, color: "white" }} />
-                </IconRecipe>
-              </div>
+        <section className="bg-gray-100 py-8">
+          <div className="container mx-auto">
+            <TitleBandage>socialchefs in number</TitleBandage>
+            <div className="grid grid-cols-6 my-8 gap-6">
+              <StatisCard name="members" number={33}>
+                <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
+              <StatisCard name="recipes" number={33}>
+                <BgColorsOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
+              <StatisCard name="photos" number={33}>
+                <CameraOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
+              <StatisCard name="posts" number={33}>
+                <BookOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
+              <StatisCard name="comments" number={33}>
+                <CommentOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
+              <StatisCard name="articles" number={33}>
+                <FileDoneOutlined style={{ fontSize: 80, color: "#dbbc94" }} />
+              </StatisCard>
             </div>
-          </aside>
-        </div>
-      </section>
+            <PrimaryButton callback={handleJoinUs} classname="px-8 mx-auto">
+              join us!
+            </PrimaryButton>
+          </div>
+        </section>
+
+        <hr />
+        {/* section 3 */}
+        <section className="bg-gray-100 py-10">
+          <div className="container mx-auto grid grid-cols-12 gap-10">
+            <article className="col-span-9">
+              <section>
+                <div className="grid grid-cols-3 gap-8">
+                  <div className="col-span-2">
+                    <FeaturesRecipe />
+                  </div>
+                  <div className="col-span-1">
+                    <FeaturedMember />
+                  </div>
+                </div>
+              </section>
+              <hr className="my-8" />
+              <section>
+                <SectionBandage classname="mb-8"> latest recipe</SectionBandage>
+                <div className="grid grid-cols-3 gap-6 mb-10">
+                  <Recipe />
+                  <Recipe />
+                  <Recipe />
+                  <Recipe />
+                  <Recipe />
+                  <Recipe />
+                  <Recipe />
+                </div>
+              </section>
+            </article>
+            <aside className="col-span-3">
+              <div>
+                <article className="bg-white py-3">
+                  Recipe category with icons
+                </article>
+                <div className="grid grid-cols-3">
+                  <IconRecipe title="appetizer" color="bg-rose-300">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-400">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-500">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-400">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-500">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-300">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-500">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-300">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                  <IconRecipe title="appetizer" color="bg-rose-400">
+                    <CopyOutlined style={{ fontSize: 30, color: "white" }} />
+                  </IconRecipe>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

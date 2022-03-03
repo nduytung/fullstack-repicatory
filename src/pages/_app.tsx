@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <MainLayout>
-        <Component {...pageProps} />;
+        <div className="bg-gray-100 w-full">
+          <Component {...pageProps} />;
+        </div>
       </MainLayout>
     </Provider>
   );

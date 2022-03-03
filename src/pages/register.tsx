@@ -53,7 +53,7 @@ const Register = () => {
   });
 
   return (
-    <div className="container bg-gray-200 mx-auto py-32">
+    <div className="py-32 container mx-auto max-w-screen-xl">
       <section className="bg-white p-4 h-84 w-2/5 mx-auto ">
         <h2 className="text-gray-500">Register</h2>
         <form onSubmit={formik.handleSubmit}>

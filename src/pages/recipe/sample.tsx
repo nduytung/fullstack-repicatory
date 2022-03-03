@@ -13,7 +13,7 @@ import Comment from "../../components/recipe/Comment";
 const Sample = () => {
   return (
     <div>
-      <nav className="text-white py-10 text-center bg-gray-400 text-4xl font-semibold">
+      <nav className="text-white py-10 max-w-screen-xl  text-center bg-gray-400 text-4xl font-semibold">
         <p className="w-2/3 mx-auto">
           Andouille and Beef Burgers with Spicy Mayo and Caramelized Onions
         </p>

@@ -3,33 +3,30 @@ import React from "react";
 
 const HEADER_LINK = [
   {
-    name: "recipes",
+    name: "home",
+    link: "/ourhome",
+  },
+
+  {
+    name: "recipe list",
     link: "/recipes",
   },
   {
-    name: "recipes",
+    name: "today' recipe",
     link: "/blog",
   },
   {
-    name: "recipes",
+    name: "ingredients",
     link: "/item",
   },
   {
-    name: "recipes",
+    name: "about us",
     link: "/ukraine",
-  },
-  {
-    name: "recipes",
-    link: "/ourhome",
-  },
-  {
-    name: "recipes",
-    link: "/link",
   },
 ];
 const Header = () => {
   return (
-    <header className="bg-white container grid grid-cols-12 mx-auto h-20 items-center">
+    <header className="bg-white container max-w-screen-xl grid grid-cols-12 mx-auto h-24 items-center">
       <span className="text-3xl font-extrabold col-span-2">social chef</span>
       <ul className="flex justify-between col-span-7 w-4/5 mx-auto">
         {HEADER_LINK.map((item, index) => {

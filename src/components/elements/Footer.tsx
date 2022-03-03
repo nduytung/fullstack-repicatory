@@ -3,15 +3,15 @@ import ReverseButton from "./ReversedButton";
 
 const Footer = () => {
   return (
-    <footer className="bg-rose-400">
-      <section className="container mx-auto text-white font-light text-2xl py-8 flex justify-between items-center">
+    <footer className="bg-rose-400 ">
+      <section className="container mx-auto max-w-screen-xl text-white font-light text-2xl py-8 flex justify-between items-center">
         <p>Already convinced? Create an awesome community of your own.</p>
         <ReverseButton classname="px-5 mr-0" callback={() => {}}>
           purchase now
         </ReverseButton>
       </section>
-      <section className="bg-white">
-        <article className="text-gray-500 grid grid-cols-10 gap-8 container mx-auto py-10">
+      <section className="bg-white ">
+        <article className="text-gray-500 container max-w-screen-xl grid grid-cols-10 gap-8 container mx-auto py-10">
           <div className="col-span-5">
             <h4 className="font-medium text-md mb-5">
               About SocialChef Community
