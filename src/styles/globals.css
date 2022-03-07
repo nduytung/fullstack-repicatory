@@ -10,7 +10,7 @@
   background: linear-gradient(
       0deg,
       rgba(128, 128, 128, 0.3),
-      rgba(128, 128, 128, 0.6)
+      rgba(128, 128, 128, 0.8)
     ),
     url("../../public/main-banner.jpg");
   background-size: cover;
@@ -19,7 +19,7 @@
 .main-bg {
   background-image: url("../../public/main-bg.jpg");
   background-repeat: repeat-y;
-  background-size: contain;
+  background-size: cover;
 }
 .text-primary-100 {
   color: "#f28c87";
