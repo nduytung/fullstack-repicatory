@@ -54,7 +54,7 @@ const Register = () => {
 
   return (
     <div className="py-32 container mx-auto max-w-screen-xl">
-      <section className="bg-white p-4 h-84 w-2/5 mx-auto ">
+      <section className="bg-white p-4 h-84 mx-5 md:w-4/5  lg:w-2/5 md:mx-auto ">
         <h2 className="text-gray-500">Register</h2>
         <form onSubmit={formik.handleSubmit}>
           <input
@@ -64,7 +64,7 @@ const Register = () => {
             placeholder="Your full name..."
             className="p-2 text-gray-400 text-sm focus:outline-rose-400 my-2 font-light w-full border border-gray-200"
           />
-          <div className="grid grid-cols-2 gap-3">
+          <div className="md:grid md:grid-cols-2 gap-3">
             <input
               onChange={formik.handleChange}
               value={formik.values.username}
@@ -98,13 +98,16 @@ const Register = () => {
             <input type="checkbox" name="" id="" className="mr-2" />
             Remember my password
           </div>
-          <div className="flex items-center mt-5 justify-between">
+          <div className="md:flex items-center mt-5 justify-between">
             <div className="font-thin text-sm">
               Already have an account?
-              <a className="text-rose-400"> Login </a>
+              <a className="text-rose-400 ml-2"> Login </a>
             </div>
-            <button type="submit">
-              <PrimaryButton classname="px-4" callback={() => {}}>
+            <button type="submit" className="w-full">
+              <PrimaryButton
+                classname="px-4 mt-5 md:mt-0 mr-0"
+                callback={() => {}}
+              >
                 register
               </PrimaryButton>
             </button>

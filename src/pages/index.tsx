@@ -93,12 +93,12 @@ const Home = () => {
     <div>
       {/* section 1 */}
       <section className="py-32 main-banner">
-        <div className="container grid grid-cols-12 gap-10 mx-auto max-w-screen-xl">
-          <div className="col-span-8 h-4/5 flex flex-col text-white items-start justify-between">
-            <h1 className="font-light" style={{ fontSize: 55 }}>
+        <div className="container grid grid-cols-1 md:grid-cols-12 gap-10 px-5  mx-auto max-w-screen-xl">
+          <div className="col-span-1 md:col-span-7 lg:col-span-8 lg:h-4/5 flex flex-col text-white items-start justify-between">
+            <h1 className="font-light text-5xl md:text-6xl">
               Welcome to social chef!
             </h1>
-            <p className="font-light text-md text-justify">
+            <p className="font-light text-md text-justify w-full my-6 md:my-0">
               SocialChef is the ultimate cooking social community, where recipes
               come to life. By joining us you will join a robust foodie
               community and where you will get to share your recipes and food
@@ -115,7 +115,7 @@ const Home = () => {
                 <RightOutlined />
               </div>
             </WhiteButton>
-            <p>
+            <p className=" mt-2 md:mt-0">
               Already a member? Click{" "}
               <Link href="/login">
                 <span className="text-rose-300 underline cursor-pointer">
@@ -125,16 +125,15 @@ const Home = () => {
               to login.
             </p>
           </div>
-          <div className="col-span-1"></div>
-          <div className="col-span-3 bg-white p-4">
+          <div className="col-span-0 lg:col-span-1"></div>
+          <div className="col-span-1 md:col-span-4 lg:col-span-3 bg-white p-4">
             <h4 className="font-medium text-md text-gray-700">
               Refine search result
             </h4>
             <p className="font-light text-justify text-gray-500 text-sm my-3">
               All you need to do is enter an ingredient, a dish or a keyword.You
               can also select a specific tag from the dropdown. There’s sure to
-              be something tempting for you to try.{"\n"}
-              Enjoy!
+              be something tempting for you to try. Enjoy!
             </p>
             <form>
               <Input name="term" placeholder="Enter your search term" />
@@ -175,13 +174,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <main className="container mx-auto max-w-screen-xl">
+      <main className="container mx-auto max-w-screen-xl px-5 ">
         {/* section 2 */}
 
         <section className="py-8">
           <div className="container mx-auto">
             <TitleBandage>socialchef in numbers</TitleBandage>
-            <div className="grid grid-cols-6 my-8 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-6 my-8 gap-6">
               <StatisCard name="members" number={33}>
                 <p className="text-6xl text-amber-600">
                   <CommentOutlined />
@@ -222,14 +221,14 @@ const Home = () => {
         <hr />
         {/* section 3 */}
         <section className="py-10">
-          <div className="container mx-auto grid grid-cols-12 gap-10">
-            <article className="col-span-9">
+          <div className="container mx-auto grid md:grid-cols-12 gap-10">
+            <article className="md:col-span-12 lg:col-span-9">
               <section>
-                <div className="grid grid-cols-3 gap-8">
-                  <div className="col-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-3 gap-8">
+                  <div className="md:col-span-5 lg:col-span-2">
                     <FeaturesRecipe />
                   </div>
-                  <div className="col-span-1">
+                  <div className="md:col-span-3 lg:col-span-1">
                     <FeaturedMember />
                   </div>
                 </div>
@@ -237,7 +236,7 @@ const Home = () => {
               <hr className="my-8" />
               <section>
                 <SectionBandage classname="mb-8">latest recipes</SectionBandage>
-                <div className="grid grid-cols-3 gap-10 mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
                   <Recipe />
                   <Recipe />
                   <Recipe />
@@ -248,7 +247,7 @@ const Home = () => {
                 </div>
               </section>
             </article>
-            <aside className="col-span-3">
+            <aside className="hidden lg:block lg:col-span-3">
               <div>
                 <article className="bg-white py-3 text-center font-medium">
                   Recipe category with icons

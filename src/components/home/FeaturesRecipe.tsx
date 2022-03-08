@@ -4,8 +4,8 @@ import SectionBandage from "../elements/SectionBandage";
 
 const FeaturesRecipe = () => {
   return (
-    <div className="bg-white">
-      <div className="w-full bg-gray-300 h-96 p-5">
+    <div className="bg-white w-full">
+      <div className="bg-gray-300 h-96 p-5">
         <SectionBandage> featured recipe</SectionBandage>
       </div>
       <article className="p-6">
@@ -17,7 +17,7 @@ const FeaturesRecipe = () => {
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab…
         </p>
-        <div className="flex justify-between items-center">
+        <div className="block md:flex justify-between items-center">
           <PrimaryButton classname="px-10 mx-0" callback={() => {}}>
             see the full recipe
           </PrimaryButton>

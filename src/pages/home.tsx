@@ -7,8 +7,8 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState(1);
   return (
     <div className="max-w-screen-xl container mx-auto">
-      <div className="container grid grid-cols-4 gap-10 mx-auto py-12">
-        <section className="col-span-1 bg-white">
+      <div className="container grid grid-cols-6 xl:grid-cols-4 gap-10 mx-auto items-start py-12 px-5 ">
+        <section className="col-span-2 xl:col-span-1 bg-white">
           <section className="flex items-center p-5">
             <article className="bg-gray-300 rounded-full w-14 h-14 mr-4"></article>
             <div className="">
@@ -63,7 +63,7 @@ const Home = () => {
             </button>
           </div>
         </section>
-        <section className="col-span-3 bg-white p-5">
+        <section className="col-span-4 xl:col-span-3 bg-white p-5">
           {activeTab == 1 ? (
             <EditProfileForm />
           ) : activeTab === 2 ? (

@@ -3,8 +3,8 @@ import PrimaryButton from "../components/elements/PrimaryButton";
 
 const Login = () => {
   return (
-    <div className="py-32 container mx-auto max-w-screen-xl">
-      <section className="bg-white p-4 h-84 w-2/5 mx-auto ">
+    <div className=" py-20 md:py-32 container mx-auto max-w-screen-xl">
+      <section className="bg-white p-4 h-84 mx-5 md:w-4/5 lg:w-2/5 md:mx-auto ">
         <h2 className="text-gray-500">Login</h2>
         <input
           placeholder="Your name..."
@@ -18,13 +18,16 @@ const Login = () => {
           <input type="checkbox" name="" id="" className="mr-2" />
           Remember my password
         </div>
-        <div className="flex items-center mt-5 justify-between">
+        <div className="md:flex items-center mt-5 justify-between">
           <div className="font-thin text-sm">
             <p>Forgot your password?</p>
             Don't have an account yet?
             <a className="text-rose-400"> Click here </a>
           </div>
-          <PrimaryButton classname="w-2/5 mr-0" callback={() => {}}>
+          <PrimaryButton
+            classname="w-2/5 mr-0 mt-5 md:mt-0"
+            callback={() => {}}
+          >
             login
           </PrimaryButton>
         </div>
