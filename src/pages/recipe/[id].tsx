@@ -3,7 +3,6 @@ import {
   PrinterOutlined,
   StarOutlined,
   HeartOutlined,
-  SafetyCertificateOutlined,
   ClockCircleOutlined,
   SearchOutlined,
   FacebookFilled,
@@ -13,9 +12,16 @@ import RecipeSection from "../../components/recipe/RecipeSection";
 import SectionBandage from "../../components/elements/SectionBandage";
 import Comment from "../../components/recipe/Comment";
 import PrimaryButton from "../../components/elements/PrimaryButton";
-const Sample = () => {
+import { getRandomMenuList, getRecipeById } from "../../lib/index.api";
+import { Router, useRouter } from "next/router";
+import { stringify } from "querystring";
+
+const Sample = ({ detail }: { detail: object }) => {
+  const router = useRouter();
+  if (router.isFallback) return <div> Loading, please wait...</div>;
   return (
     <div>
+      {console.log(detail)}
       <nav className="text-white py-16 mx-auto text-center main-banner text-3xl lg:text-4xl font-semibold">
         <p className=" max-w-screen-xl w-2/3 mx-auto">
           Andouille and Beef Burgers with Spicy Mayo and Caramelized Onions
@@ -188,6 +194,35 @@ const Sample = () => {
       </main>
     </div>
   );
+};
+
+export const getStaticPaths = async () => {
+  const menu: any = await getRandomMenuList(18);
+  let newPath: any[] = [];
+
+  if (menu) {
+    newPath = await menu.map((item: any) => ({
+      params: {
+        id: `${item.id}`,
+      },
+    }));
+  }
+
+  return {
+    paths: newPath,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params }: any) => {
+  const detail = await getRecipeById(params.id);
+  if (detail)
+    return {
+      props: {
+        detail,
+      },
+    };
+  return false;
 };
 
 export default Sample;

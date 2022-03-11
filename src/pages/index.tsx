@@ -1,7 +1,3 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Header from "../components/elements/Header";
 import PrimaryButton from "../components/elements/PrimaryButton";
 import WhiteButton from "../components/elements/WhiteButton";
 import Input from "../components/home/Input";
@@ -29,10 +25,11 @@ import FeaturesRecipe from "../components/home/FeaturesRecipe";
 import FeaturedMember from "../components/home/FeaturedMember";
 import SectionBandage from "../components/elements/SectionBandage";
 import Recipe from "../components/home/Recipe";
-import Footer from "../components/elements/Footer";
 import IconRecipe from "../components/home/IconRecipe";
-import MainLayout from "../layout/MainLayout/MainLayout";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { getRandomMenuList } from "../lib/index.api";
+import { GetStaticProps } from "next";
 
 const RECIPE_CATE = [
   {
@@ -75,7 +72,11 @@ const RECIPE_CATE = [
 
 const COLOR_LIST = ["bg-rose-200", "bg-rose-300", "bg-rose-400"];
 
-const Home = () => {
+type HomeType = {
+  menu: { title: string; id: number; image: string }[];
+};
+
+const Home = ({ menu }: HomeType) => {
   //section 1
   const handleCooking = () => {
     return;
@@ -89,6 +90,7 @@ const Home = () => {
   const handleJoinUs = () => {
     return;
   };
+
   return (
     <div>
       {/* section 1 */}
@@ -97,6 +99,7 @@ const Home = () => {
           <div className="col-span-1 md:col-span-7 lg:col-span-8 lg:h-4/5 flex flex-col text-white items-start justify-between">
             <h1 className="font-light text-5xl md:text-6xl">
               Welcome to social chef!
+              {console.log(menu)}
             </h1>
             <p className="font-light text-md text-justify w-full my-6 md:my-0">
               SocialChef is the ultimate cooking social community, where recipes
@@ -237,13 +240,20 @@ const Home = () => {
               <section>
                 <SectionBandage classname="mb-8">latest recipes</SectionBandage>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-                  <Recipe />
-                  <Recipe />
-                  <Recipe />
-                  <Recipe />
-                  <Recipe />
-                  <Recipe />
-                  <Recipe />
+                  {menu ? (
+                    menu.map((recipe) => {
+                      return (
+                        <Recipe
+                          key={recipe.id}
+                          title={recipe.title}
+                          id={recipe.id}
+                          image={recipe.image}
+                        />
+                      );
+                    })
+                  ) : (
+                    <div>Loading menu, please wait...</div>
+                  )}
                 </div>
               </section>
             </article>
@@ -280,5 +290,14 @@ const Home = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const apiMenu: any = await getRandomMenuList(18);
+  return {
+    props: {
+      menu: apiMenu,
+    },
+  };
+}
 
 export default Home;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   SearchOutlined,
   UserOutlined,
@@ -32,9 +32,10 @@ const HEADER_LINK = [
   },
 ];
 const Header = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <header className="bg-white  fixed right-0 left-0 z-40 top-0  ">
-      <div className="container w-full  max-w-screen-xl mx-auto grid grid-cols-12 px-5  h-20 md:h-24 items-center">
+    <header className="bg-white fixed right-0 left-0 z-40 top-0  ">
+      <div className="container w-full relative max-w-screen-xl mx-auto grid grid-cols-12 px-5  h-20 md:h-24 items-center">
         <Link href="/">
           <span className="text-lg md:text-3xl font-extrabold col-span-4 md:col-span-2 cursor-pointer">
             fucking logo
@@ -44,13 +45,13 @@ const Header = () => {
           <ul className="hidden lg:flex justify-between w-4/5 mx-auto">
             {HEADER_LINK.map((item, index) => {
               return (
-                <p className="flex-1">
+                <li className="flex-1">
                   <Link href={item.link} key={index}>
                     <span className="uppercase font-thin cursor-pointer hover:text-rose-500">
                       {item.name}
                     </span>
                   </Link>
-                </p>
+                </li>
               );
             })}
           </ul>
@@ -78,12 +79,33 @@ const Header = () => {
               <p className="text-center mt-1">REGISTER ACCOUNT</p>
             </Link>
           </div>
-          <div className="flex-1 flex lg:hidden items-center justify-center bg-rose-400 text-white font-semibold text-sm cursor-pointer">
+          <button
+            onClick={() => setToggleMenu(!toggleMenu)}
+            className="flex-1 flex lg:hidden items-center justify-center bg-rose-400 text-white font-semibold text-sm cursor-pointer"
+          >
             <p className="text-4xl font-bold text-center -mt-3 text-white">
               <MenuOutlined />
             </p>
-          </div>
+          </button>
         </div>
+      </div>
+      {/* mobile menu  */}
+      <div
+        className={`bg-white relative pt-22 w-full ${
+          toggleMenu ? "block" : "hidden"
+        } `}
+      >
+        {HEADER_LINK.map((item, index) => {
+          return (
+            <li className={`py-3 px-5 list-none`}>
+              <Link href={item.link} key={index}>
+                <span className="uppercase font-thin cursor-pointer hover:text-rose-500">
+                  {item.name}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
       </div>
     </header>
   );
