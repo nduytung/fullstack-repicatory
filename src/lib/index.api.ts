@@ -13,13 +13,12 @@ export const getRandomMenuList = async (limit: number) => {
   }
 };
 
-export const getRecipeById = async (id: string) => {
+export const getRecipeById = async (id: string | number) => {
   try {
     const response: { data: { results: object[] } } = await axios.get(
       `${process.env.NEXT_PUBLIC_API_ENDPOINT}/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
     );
-
-    return response.data.results;
+    return response.data;
   } catch (err) {
     console.log(err);
     return false;
